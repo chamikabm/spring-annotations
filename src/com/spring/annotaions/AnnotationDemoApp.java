@@ -10,6 +10,7 @@ public class AnnotationDemoApp {
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
         Coach coach = applicationContext.getBean("tennisCoach", Coach.class);
+
         System.out.println(coach.getDailyWorkout());
         System.out.println(coach.getDailyFortune());
 
