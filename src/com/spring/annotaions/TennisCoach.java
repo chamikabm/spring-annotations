@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
 public class TennisCoach implements Coach {
 
@@ -40,6 +43,18 @@ public class TennisCoach implements Coach {
     // Default constructor not required but implemented for to check the initialization order.
     public TennisCoach() {
         System.out.println("Inside the default constructor.");
+    }
+
+    // Define init method.
+    @PostConstruct
+    public void doMyStartUpStuff() {
+        System.out.println("Tennis Coach: inside init method -> doMyStartUpStuff.");
+    }
+
+    // Define destroy method.
+    @PreDestroy
+    public void doMyCleanUpStuff(){
+        System.out.println("Tennis Coach: inside destroy method -> doMyCleanUpStuff");
     }
 
 /*    @Autowired
