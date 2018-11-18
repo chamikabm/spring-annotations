@@ -3,9 +3,11 @@ package com.spring.annotaions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 //@ComponentScan("com.spring.annotaions") // We don't need to do component scan as we rely on following bean definitions.
+@PropertySource("classpath:sport.properties")
 public class SportConfig {
 
     // Define bean for sad fortune service.
